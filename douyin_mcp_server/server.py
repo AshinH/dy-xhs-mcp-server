@@ -107,7 +107,7 @@ class DouyinProcessor:
     
     async def download_video(self, video_info: dict, ctx: Context) -> Path:
         """异步下载视频到临时目录"""
-        filename = f"{video_info['title']}.mp4"
+        filename = f"{video_info['video_id']}.mp4"
         filepath = self.temp_dir / filename
         
         ctx.info(f"正在下载视频: {video_info['title']}")

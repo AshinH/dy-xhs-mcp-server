@@ -11,7 +11,7 @@
 - 🎧 自动提取视频音频
 - 📝 使用AI语音识别提取文本内容
 - 🧹 自动清理中间临时文件
-- 🔧 支持自定义API配置, API 默认使用 [SiliconFlow API](https://cloud.siliconflow.cn/i/TxUlXG3u)
+- 🔧 支持自定义API配置, API 默认使用 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
 ## 安装
 
@@ -46,7 +46,7 @@ douyin-mcp-server
       "command": "uvx",
       "args": ["douyin-mcp-server"],
       "env": {
-        "DOUYIN_API_KEY": "your-api-key-here"
+        "DASHSCOPE_API_KEY": "your-api-key-here"
       }
     }
   }
@@ -66,7 +66,7 @@ get_douyin_download_link("https://v.douyin.com/xxx")
 
 #### 提取视频文本
 
-使用 `extract_douyin_text` 工具（需要设置环境变量 DOUYIN_API_KEY）：
+使用 `extract_douyin_text` 工具（需要设置环境变量 DASHSCOPE_API_KEY）：
 
 ```python
 # 在Claude中使用
@@ -85,21 +85,9 @@ parse_douyin_video_info("https://v.douyin.com/xxx")
 
 ### 默认配置
 
-服务器默认使用 [SiliconFlow API](https://cloud.siliconflow.cn/i/TxUlXG3u)：
-- API URL: `https://api.siliconflow.cn/v1/audio/transcriptions`
-- 模型: `FunAudioLLM/SenseVoiceSmall`
+服务器API 默认使用 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
-### 自定义配置
-
-你可以自定义API配置：
-
-```python
-extract_douyin_text(
-    share_link="your-douyin-link",
-    api_base_url="https://your-custom-api.com/transcriptions",
-    model="your-custom-model"
-)
-```
+前往阿里云百炼开通API服务。
 
 ## 环境变量配置
 
@@ -112,7 +100,7 @@ extract_douyin_text(
       "command": "uvx",
       "args": ["douyin-mcp-server"],
       "env": {
-        "DOUYIN_API_KEY": "sk-your-api-key-here"
+        "DASHSCOPE_API_KEY": "sk-your-api-key-here"
       }
     }
   }
@@ -135,18 +123,15 @@ extract_douyin_text(
 
 完整的文本提取工具，执行以下步骤：
 1. 解析抖音分享链接
-2. 下载无水印视频
-3. 提取音频
-4. 转换音频为文本
-5. 清理临时文件
+2. 直接使用视频URL进行语音识别
+3. 返回提取的文本内容
 
 **参数：**
 - `share_link`: 抖音分享链接或包含链接的文本
-- `api_base_url`: API基础URL（可选）
-- `model`: 语音识别模型（可选）
+- `model`: 语音识别模型（可选，默认使用paraformer-v2）
 
 **环境变量：**
-- `DOUYIN_API_KEY`: 语音识别API密钥（必需）
+- `DASHSCOPE_API_KEY`: 阿里云百炼API密钥（必需）
 
 ### `parse_douyin_video_info`
 
@@ -162,27 +147,17 @@ extract_douyin_text(
 ## 依赖要求
 
 - Python 3.8+
-- ffmpeg（系统需要安装ffmpeg）
 - requests
 - ffmpeg-python
 - tqdm
 - mcp
+- dashscope
 
-## 安装 ffmpeg
-
-### macOS
-```bash
-brew install ffmpeg
-```
-
-### Ubuntu/Debian
-```bash
-sudo apt update
-sudo apt install ffmpeg
-```
-
-### Windows
-下载并安装 [ffmpeg](https://ffmpeg.org/download.html)
+## 注意事项
+- 切换到使用阿里云百炼API进行语音识别，更快更准
+- 需要在环境变量中设置有效的阿里云百炼API密钥 `DASHSCOPE_API_KEY`
+- 获取下载链接功能无需API密钥
+- 支持大部分抖音视频格式
 
 ## 开发
 
@@ -200,13 +175,6 @@ pip install -e .
 python -m douyin_mcp_server.server
 ```
 
-## 注意事项
-
-- 确保系统已安装 ffmpeg
-- 需要在环境变量中设置有效的语音识别API密钥 `DOUYIN_API_KEY`
-- 获取下载链接功能无需API密钥
-- 中间文件会自动清理，不会占用磁盘空间
-- 支持大部分抖音视频格式
 
 ## ⚠️ 免责声明
 - 使用者对本项目的使用由使用者自行决定，并自行承担风险。作者对使用者使用本项目所产生的任何损失、责任、或风险概不负责。
@@ -248,3 +216,8 @@ MIT License
 
 ### v1.1.0
 - 修复提取视频时文件名过长的bug
+
+### v1.2.0
+- 更快、更准的视频文案提取
+- 切换到阿里云百炼API，提升识别准确率
+- 更新环境变量从DOUYIN_API_KEY到DASHSCOPE_API_KEY

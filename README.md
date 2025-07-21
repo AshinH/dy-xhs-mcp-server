@@ -146,7 +146,7 @@ parse_douyin_video_info("https://v.douyin.com/xxx")
 
 ## 依赖要求
 
-- Python 3.8+
+- Python 3.10+
 - requests
 - ffmpeg-python
 - tqdm
@@ -175,6 +175,30 @@ pip install -e .
 python -m douyin_mcp_server.server
 ```
 
+### 在Claude Desktop中配置（本地源码）
+
+在Claude Desktop的配置文件中配置：
+
+```json
+{
+  "mcpServers": {
+    "douyin-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/path/to/your/douyin-mcp-server",
+        "python",
+        "-m",
+        "douyin_mcp_server"
+      ],
+      "env": {
+        "DASHSCOPE_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
 
 ## ⚠️ 免责声明
 - 使用者对本项目的使用由使用者自行决定，并自行承担风险。作者对使用者使用本项目所产生的任何损失、责任、或风险概不负责。

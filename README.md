@@ -5,6 +5,10 @@
 
 一个基于 Model Context Protocol (MCP) 的服务器，可以从抖音分享链接下载无水印视频，提取音频并转换为文本。
 
+<a href="https://glama.ai/mcp/servers/@yzfly/douyin-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@yzfly/douyin-mcp-server/badge" alt="douyin-mcp-server MCP server" />
+</a>
+
 ## 功能特性
 
 - 🎵 从抖音分享链接获取无水印视频

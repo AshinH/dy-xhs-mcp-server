@@ -17,31 +17,15 @@
 - 🧹 自动清理中间临时文件
 - 🔧 支持自定义API配置, API 默认使用 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
-## 安装
-
-### 使用 uvx 安装（推荐）
-
-```bash
-uvx douyin-mcp-server
-```
-
-### 使用 pip 安装
-
-```bash
-pip install douyin-mcp-server
-```
-
 ## 使用方法
 
-### 1. 启动服务器
+1. 获取`DASHSCOPE_API_KEY`: 前往 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
-```bash
-douyin-mcp-server
-```
+![获取阿里云百炼API](https://files.mdnice.com/user/43439/36e658be-1ccf-41dd-87cf-d43fefde5c4e.png)
 
-### 2. 在Claude Desktop中配置
+2. 配置环境变量
 
-在你的 `claude_desktop_config.json` 中添加：
+在Claude Desktop / Cherry Studio 等支持 MCP Server的配置文件中设置环境变量（在下面的"DASHSCOPE_API_KEY"中设置）：
 
 ```json
 {
@@ -50,66 +34,22 @@ douyin-mcp-server
       "command": "uvx",
       "args": ["douyin-mcp-server"],
       "env": {
-        "DASHSCOPE_API_KEY": "your-api-key-here"
+        "DASHSCOPE_API_KEY": "sk-xxxx"
       }
     }
   }
 }
 ```
 
-### 3. 使用MCP工具
+3. 正常调用MCP 工具即可
 
-#### 获取无水印下载链接
+## API 配置说明
 
-使用 `get_douyin_download_link` 工具：
+原版本使用硅基流动的API，当前版本默认使用阿里云百炼的API，效果更好，速度更快，对本地计算资源消耗更小。
 
-```python
-# 在Claude中使用，无需API密钥
-get_douyin_download_link("https://v.douyin.com/xxx")
-```
+前往阿里云百炼开通API服务，将获取的API Key配置到环境变量 `DASHSCOPE_API_KEY` 中。
 
-#### 提取视频文本
-
-使用 `extract_douyin_text` 工具（需要设置环境变量 DASHSCOPE_API_KEY）：
-
-```python
-# 在Claude中使用
-extract_douyin_text("https://v.douyin.com/xxx")
-```
-
-#### 解析视频信息
-
-使用 `parse_douyin_video_info` 工具：
-
-```python
-parse_douyin_video_info("https://v.douyin.com/xxx")
-```
-
-## API 配置
-
-### 默认配置
-
-服务器API 默认使用 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
-
-前往阿里云百炼开通API服务。
-
-## 环境变量配置
-
-在Claude Desktop的配置文件中设置环境变量：
-
-```json
-{
-  "mcpServers": {
-    "douyin-mcp": {
-      "command": "uvx",
-      "args": ["douyin-mcp-server"],
-      "env": {
-        "DASHSCOPE_API_KEY": "sk-your-api-key-here"
-      }
-    }
-  }
-}
-```
+[阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
 ## 工具说明
 

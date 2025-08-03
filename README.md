@@ -25,7 +25,7 @@
 
 2. 配置环境变量
 
-在Claude Desktop / Cherry Studio 等支持 MCP Server的配置文件中设置环境变量（在下面的"DASHSCOPE_API_KEY"中设置）：
+使用上面获取的`DASHSCOPE_API_KEY`，在Claude Desktop / Cherry Studio 等支持 MCP Server的配置文件中设置环境变量（在下面的"DASHSCOPE_API_KEY"中设置）：
 
 ```json
 {
@@ -45,13 +45,13 @@
 
 ## API 配置说明
 
-原版本使用硅基流动的API，当前版本默认使用阿里云百炼的API，效果更好，速度更快，对本地计算资源消耗更小。
+旧版本（<= 1.1.0）使用硅基流动的API，最新版本（>= 1.2.0）默认使用阿里云百炼的API，效果更好，速度更快，对本地计算资源消耗更小。
 
 前往阿里云百炼开通API服务，将获取的API Key配置到环境变量 `DASHSCOPE_API_KEY` 中。
 
 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
-## 使用旧版本 （<= 1.1.0）)
+## 使用旧版本 （<= 1.1.0）
 
 如果习惯使用旧版本，请使用下面的配置，重点是要安装`1.1.0`版本，API Key 配置为 `DOUYIN_API_KEY`，在硅基流动注册账号并获取API Key: https://cloud.siliconflow.cn/i/TxUlXG3u
 

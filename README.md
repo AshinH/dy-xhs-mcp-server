@@ -51,6 +51,28 @@
 
 [阿里云百炼API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
+## 使用旧版本 （<= 1.1.0）)
+
+如果习惯使用旧版本，请使用下面的配置，重点是要安装`1.1.0`版本，API Key 配置为 `DOUYIN_API_KEY`，在硅基流动注册账号并获取API Key: https://cloud.siliconflow.cn/i/TxUlXG3u
+
+1.1.0 版本文档：https://pypi.org/project/douyin-mcp-server/1.1.0/
+
+
+```
+{
+  "mcpServers": {
+    "douyin-mcp": {
+      "command": "uvx",
+      "args": ["uvx douyin-mcp-server@1.1.0"],
+      "env": {
+        "DOUYIN_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+
 ## 工具说明
 
 ### `get_douyin_download_link`

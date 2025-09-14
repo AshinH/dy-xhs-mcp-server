@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/yzfly-douyin-mcp-server-badge.png)](https://mseep.ai/app/yzfly-douyin-mcp-server)
+
 # 抖音无水印视频文本提取 MCP 服务器
 
 [![PyPI version](https://badge.fury.io/py/douyin-mcp-server.svg)](https://badge.fury.io/py/douyin-mcp-server)

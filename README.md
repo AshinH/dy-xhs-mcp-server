@@ -257,14 +257,25 @@
 - 🚀 **性能优化**：使用阿里云百炼 API 获得更快更准确的识别效果
 - 📝 **小红书支持**：支持视频笔记和图文笔记两种类型
 
+## 📁 项目结构
+
+项目文件已按类型归类到以下目录：
+
+- **`docs/`** - 文档目录：存放所有项目文档（Markdown文件）
+- **`configs/`** - 配置目录：存放所有配置文件（JSON文件）
+- **`scripts/`** - 脚本目录：存放所有可执行脚本（Python和Shell脚本）
+- **`douyin_mcp_server/`** - 源代码目录：项目的主要源代码，采用分层架构
+
+详细说明请查看 [docs/DIRECTORY_STRUCTURE.md](docs/DIRECTORY_STRUCTURE.md)
+
 ## 🔧 开发指南
 
 ### 本地开发环境搭建
 
 ```bash
 # 克隆项目
-git clone https://github.com/yzfly/douyin-mcp-server.git
-cd douyin-mcp-server
+git clone https://github.com/AshinH/dy-xhs-mcp-server.git
+cd dy-xhs-mcp-server
 
 # 安装依赖（开发模式）
 pip install -e .
@@ -275,6 +286,9 @@ pip install -e .
 ```bash
 # 启动服务器进行测试
 python -m douyin_mcp_server.server
+
+# 或使用启动脚本
+bash scripts/start_server.sh
 ```
 
 ### Claude Desktop 本地开发配置

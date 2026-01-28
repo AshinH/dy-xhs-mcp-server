@@ -1,0 +1,32 @@
+{
+  "config1_基本配置": {
+    "mcpServers": {
+      "douyin-mcp": {
+        "command": "uvx",
+        "args": ["douyin-xhs-mcp-server"],
+        "env": {
+          "DASHSCOPE_API_KEY": "sk-your-api-key-here"
+        }
+      }
+    }
+  },
+  "config2_指定版本": {
+    "mcpServers": {
+      "douyin-mcp": {
+        "command": "uvx",
+        "args": ["douyin-xhs-mcp-server@1.3.0"],
+        "env": {
+          "DASHSCOPE_API_KEY": "sk-your-api-key-here"
+        }
+      }
+    }
+  },
+  "config3_简化配置": {
+    "mcpServers": {
+      "douyin-mcp": {
+        "command": "uvx",
+        "args": ["douyin-xhs-mcp-server"]
+      }
+    }
+  }
+}

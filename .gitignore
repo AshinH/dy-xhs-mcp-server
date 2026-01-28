@@ -20,29 +20,49 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual environments
+# Virtual Environment
 venv/
-env/
 ENV/
+env/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS
-.DS_Store
-Thumbs.db
+# 配置文件（包含敏感信息）
+config.json
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+# 日志文件
+*.log
+server.log
 
-# Distribution
-*.tar.gz
-*.whl
+# 进程文件
+*.pid
+server.pid
 
-.claude
+# 下载的视频文件
+*.mp4
+*.mp3
+*.avi
+*.mov
+
+# 临时文件
 temp/
+tmp/
+*.tmp
+
+# 测试文件
+test_*.py
+download_video.py
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 其他
+*.bak
+*.swp

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "douyin-mcp": {
+      "command": "uvx",
+      "args": [
+        "douyin-xhs-mcp-server"
+      ],
+      "env": {
+        "DASHSCOPE_API_KEY": "sk-your-api-key-here"
+      }
+    }
+  }
+}

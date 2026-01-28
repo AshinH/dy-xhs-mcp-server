@@ -38,6 +38,8 @@ config.json
 # 配置文件目录（包含API密钥）
 configs/*.json
 !configs/*.example.json
+!configs/.local_keys.json.template
+configs/.local_keys.json
 
 # 日志文件
 *.log

@@ -1,0 +1,8 @@
+{
+  "_comment": "本地密钥管理文件 - 此文件不会被提交到Git",
+  "_instructions": "复制此文件为 .local_keys.json 并填入您的真实API密钥",
+  
+  "dashscope_api_key": "sk-your-real-api-key-here",
+  
+  "_note": "此文件已在.gitignore中配置，不会被提交到Git仓库"
+}
